@@ -20,6 +20,13 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->id(); // ID único para la tabla
+            $table->string('title')->unique(); // Título único
+            $table->text('description');
+            $table->string('image_url');
+            $table->timestamps(); // Campos created_at y updated_at
+        });
     }
 
     /**
